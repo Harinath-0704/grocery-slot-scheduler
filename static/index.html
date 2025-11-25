@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grocery Delivery Slot Scheduler</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-title">Grocery Slot Scheduler</div>
+      </div>
+
+      <nav class="nav" id="main-nav">
+        <a href="#overview">Overview</a>
+        <a href="#module1">Module 1</a>
+        <a href="#module2">Module 2</a>
+        <a href="#demo">Demo</a>
+      </nav>
+
+      <button id="menu-toggle" class="menu-toggle" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Grocery Delivery Slot Scheduler</h1>
+          <p class="lead">Dynamic slot allocation and intelligent matching for efficient grocery delivery scheduling.</p>
+          <a class="btn-primary" href="#demo">Try Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="module1" class="section">
+      <div class="container">
+        <h2 class="section-title">Module 1 — Dynamic Delivery Slot Allocation</h2>
+        <p class="muted">
+          Automatically assigns orders into delivery time windows based on availability and customer preference.
+        </p>
+
+        <ul class="feature-list">
+          <li>Real-time slot capacity updates</li>
+          <li>Smart selection of earliest available slot</li>
+          <li>Rebalancing when a slot becomes full</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="module2" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Module 2 — Intelligent Search & Matching</h2>
+        <p class="muted">
+          Matches orders with best delivery slots using preference, capacity, and simulated proximity scoring.
+        </p>
+
+        <ul class="feature-list">
+          <li>Instant search for orders</li>
+          <li>Match scoring (capacity, window fit, proximity)</li>
+          <li>Quick slot assignment suggestions</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="demo" class="section demo-section">
+      <div class="container demo-grid">
+
+        <div class="left">
+          <h3>Incoming Orders</h3>
+
+          <div class="controls">
+            <input id="search-input" type="search" placeholder="Search orders..." />
+            <select id="filter-preference">
+              <option value="any">Prefer: Any</option>
+              <option value="earliest">Prefer: Earliest</option>
+              <option value="morning">Prefer: Morning</option>
+              <option value="afternoon">Prefer: Afternoon</option>
+              <option value="evening">Prefer: Evening</option>
+            </select>
+
+            <button id="auto-assign" class="btn">Auto-Assign</button>
+            <button id="reset-btn" class="btn ghost">Reset</button>
+          </div>
+
+          <div id="orders-list" class="orders-list"></div>
+        </div>
+
+        <div class="right">
+          <h3>Delivery Slots</h3>
+          <div id="slots-grid" class="slots-grid"></div>
+
+          <h4>Assigned Orders</h4>
+          <div id="assigned-list" class="assigned-list"></div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Grocery Slot Scheduler</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
