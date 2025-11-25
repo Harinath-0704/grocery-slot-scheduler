@@ -3,21 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Grocery Delivery Slot Scheduler</title>
+  <title>Grocery Slot Scheduler — Beautiful Demo</title>
+  <meta name="description" content="Dynamic delivery slot allocation + intelligent search & matching — colorful demo" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="brand-title">Grocery Slot Scheduler</div>
-      </div>
+    <div class="container header-row">
+      <div class="brand">Grocery Slot Scheduler</div>
 
-      <nav class="nav" id="main-nav">
+      <nav class="nav" id="nav">
         <a href="#overview">Overview</a>
-        <a href="#module1">Module 1</a>
-        <a href="#module2">Module 2</a>
         <a href="#demo">Demo</a>
       </nav>
 
@@ -27,74 +23,108 @@
 
   <main>
     <section id="overview" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h1>Grocery Delivery Slot Scheduler</h1>
-          <p class="lead">Dynamic slot allocation and intelligent matching for efficient grocery delivery scheduling.</p>
-          <a class="btn-primary" href="#demo">Try Demo</a>
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>Smart Delivery Slots</h1>
+          <p class="subtitle">Automatically allocate delivery slots and match orders to the best windows — optimized for balance and customer preference.</p>
+          <div class="hero-cta">
+            <a class="btn-primary" href="#demo">Try Live Demo</a>
+            <a class="btn-ghost" href="#how">How it works</a>
+          </div>
+          <div class="key-features">
+            <div class="kf">Auto allocation</div>
+            <div class="kf">Smart matching</div>
+            <div class="kf">Rebalancing</div>
+            <div class="kf">Responsive UI</div>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <div class="card-illustration">
+            <div class="tag">Demo</div>
+            <svg viewBox="0 0 360 220" class="ill-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ff9800"/>
+                  <stop offset="1" stop-color="#ffc107"/>
+                </linearGradient>
+              </defs>
+              <rect rx="18" width="100%" height="100%" fill="url(#g1)" opacity="0.12"/>
+              <g transform="translate(20,24)">
+                <rect x="0" y="0" width="220" height="90" rx="12" fill="#fff"/>
+                <rect x="12" y="12" width="80" height="22" rx="6" fill="#ff9800" opacity="0.12"/>
+                <rect x="12" y="44" width="180" height="10" rx="6" fill="#ffd180" opacity="0.18"/>
+                <circle cx="260" cy="60" r="40" fill="#ffd54f" opacity="0.14"/>
+              </g>
+            </svg>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="module1" class="section">
+    <section id="how" class="how">
       <div class="container">
-        <h2 class="section-title">Module 1 — Dynamic Delivery Slot Allocation</h2>
-        <p class="muted">
-          Automatically assigns orders into delivery time windows based on availability and customer preference.
-        </p>
-
-        <ul class="feature-list">
-          <li>Real-time slot capacity updates</li>
-          <li>Smart selection of earliest available slot</li>
-          <li>Rebalancing when a slot becomes full</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="module2" class="section alt">
-      <div class="container">
-        <h2 class="section-title">Module 2 — Intelligent Search & Matching</h2>
-        <p class="muted">
-          Matches orders with best delivery slots using preference, capacity, and simulated proximity scoring.
-        </p>
-
-        <ul class="feature-list">
-          <li>Instant search for orders</li>
-          <li>Match scoring (capacity, window fit, proximity)</li>
-          <li>Quick slot assignment suggestions</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="demo" class="section demo-section">
-      <div class="container demo-grid">
-
-        <div class="left">
-          <h3>Incoming Orders</h3>
-
-          <div class="controls">
-            <input id="search-input" type="search" placeholder="Search orders..." />
-            <select id="filter-preference">
-              <option value="any">Prefer: Any</option>
-              <option value="earliest">Prefer: Earliest</option>
-              <option value="morning">Prefer: Morning</option>
-              <option value="afternoon">Prefer: Afternoon</option>
-              <option value="evening">Prefer: Evening</option>
-            </select>
-
-            <button id="auto-assign" class="btn">Auto-Assign</button>
-            <button id="reset-btn" class="btn ghost">Reset</button>
+        <h2>What this demo does</h2>
+        <p class="muted">This demo showcases dynamic delivery slot allocation and intelligent search & matching. Use the demo below to experiment with auto-assignment, manual assignment and real-time slot capacity.</p>
+        <div class="how-grid">
+          <div class="how-card orange">
+            <h3>Dynamic allocation</h3>
+            <p>Greedy + rebalancing algorithm to fairly distribute orders across slots while respecting capacity.</p>
           </div>
 
-          <div id="orders-list" class="orders-list"></div>
+          <div class="how-card yellow">
+            <h3>Intelligent matching</h3>
+            <p>Searchable orders, match scoring (preference, capacity, simulated proximity) and top slot suggestions.</p>
+          </div>
+
+          <div class="how-card amber">
+            <h3>Control & Inspect</h3>
+            <p>View slot occupancy, clear slots, unassign orders and re-run allocations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="demo" class="demo">
+      <div class="container demo-grid">
+
+        <div class="panel left">
+          <div class="panel-header">
+            <h3>Incoming Orders</h3>
+            <div class="panel-actions">
+              <input id="search-input" type="search" placeholder="Search orders, names or address..." />
+              <select id="filter-preference">
+                <option value="any">Filter: Any</option>
+                <option value="earliest">Filter: Earliest</option>
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="controls-row">
+            <button id="auto-assign" class="btn action">Auto-Assign</button>
+            <button id="reset-btn" class="btn ghost">Reset</button>
+            <div class="legend">
+              <span class="pill cap">Capacity</span>
+              <span class="pill pref">Preference</span>
+            </div>
+          </div>
+
+          <div id="orders-list" class="orders-list" aria-live="polite"></div>
         </div>
 
-        <div class="right">
-          <h3>Delivery Slots</h3>
-          <div id="slots-grid" class="slots-grid"></div>
+        <div class="panel right">
+          <div class="panel-header">
+            <h3>Delivery Slots</h3>
+            <div class="slot-summary">Slots update live — click “View” to inspect assigned orders.</div>
+          </div>
 
-          <h4>Assigned Orders</h4>
-          <div id="assigned-list" class="assigned-list"></div>
+          <div id="slots-grid" class="slots-grid" role="table" aria-label="Available delivery slots"></div>
+
+          <h4 class="assigned-title">Assigned Orders</h4>
+          <div id="assigned-list" class="assigned-list" aria-live="polite"></div>
         </div>
 
       </div>
@@ -103,7 +133,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Grocery Slot Scheduler</p>
+      <div>© <span id="year"></span> Grocery Slot Scheduler</div>
+      <div class="small-muted">Deployable on Render — Start command: <code>gunicorn app:app</code></div>
     </div>
   </footer>
 
